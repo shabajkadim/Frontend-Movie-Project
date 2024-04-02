@@ -1,12 +1,12 @@
 
 import React from 'react';
-import SpotifySearch from './components/SpotifySearch.jsx';
+import MovieSearch from './components/MovieSearch.jsx';
 
 function App() {
   return (
     <div className="App">
       <div>
-        <SpotifySearch/>
+        <MovieSearch/>
         
       </div>
     </div>

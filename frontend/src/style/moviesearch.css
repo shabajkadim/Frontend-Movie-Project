@@ -1,0 +1,25 @@
+.movie-search-container{
+    /* border: 2px solid red; */
+    height: inherit;
+    text-align: center;
+    /* background-color: aqua; */
+}
+.container{
+    width: 110%;
+    height: 100px;
+    
+}
+.image-container{
+    width: 20%;
+    height: 100px;
+
+}
+.image{
+    width: 20%;
+    height: 20%;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
