@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './../style/moviesearch.css'
+import './../style/moviesearch.css';
 
 const MovieSearch = () => {
     const [query, setQuery] = useState('');
@@ -20,9 +20,9 @@ const MovieSearch = () => {
                 }
             });
             console.log(response.data, "response.data");
-            setSearchResults(response.data.d); // Update to response.data.d
+            setSearchResults(response.data.d);
             setLoading(false);
-            setQuery("")
+            setQuery("");
         } catch (error) {
             console.error('Error searching movies:', error);
             setError('Error searching movies. Please try again.');
@@ -48,28 +48,29 @@ const MovieSearch = () => {
             <h2>Movie Search</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" value={query} onChange={handleQueryChange} placeholder="Enter movie name" />
-                <button className='ButtonColor' type="submit" disabled={loading}>Search</button>
+                <button className="ButtonColor" type="submit" disabled={loading}>Search</button>
             </form>
             <h2>Search Results</h2>
-            <div className='container'>
-            {error && <p>{error}</p>}
-            {loading && <p>Loading...</p>}
-            {searchResults.length > 0 && (
-                <ul >
-                    {searchResults.map((movie) => (
-                        <li key={movie.id}>
-                            <img className='image' src={movie.i.imageUrl} alt={movie.l} />
-                            <p>Title: {movie.l}</p>
-                            <p>Year: {movie.y}</p>
-                            <p>Actors: {movie.s}</p>
-                        </li>
-                    ))}
-                </ul>
-            )}
+            <div className="container">
+                {error && <p>{error}</p>}
+                {loading && <p>Loading...</p>}
+                {searchResults.length > 0 && (
+                    <ul>
+                        {searchResults.map((movie) => (
+                            <li key={movie.id}>
+                                <div>
+                                    <img className="image" src={movie.i.imageUrl} alt={movie.l} />
+                                    <p>Title: {movie.l}</p>
+                                    <p>Year: {movie.y}</p>
+                                    <p>Actors: {movie.s}</p>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
         </div>
     );
 }
 
 export default MovieSearch;
-
